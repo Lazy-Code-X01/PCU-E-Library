@@ -162,19 +162,17 @@ section {
 .header .header-1 .search-form label:hover {
   color: #000080;
 }
-.header .header-1 .icons div,
-.header .header-1 .icons a {
+.header .header-1 .icons {
+  display: flex;
+}
+.header .header-1 .icons div {
   font-size: 2.5rem;
   margin-left: 1.5rem;
   color: var(--black);
   cursor: pointer;
 }
-.header .header-1 .icons div:hover,
-.header .header-1 .icons a:hover {
+.header .header-1 .icons div:hover {
   color: #000080;
-}
-.header .header-1 .icons span {
-  font-size: 2rem;
 }
 .header .header-2 {
   background-color: #000080;
@@ -201,6 +199,11 @@ section {
 
 #search-btn {
   display: none;
+}
+@media screen and (max-width: 768px) {
+  #search-btn {
+    display: inline-block;
+  }
 }
 
 .bottom-navbar {
