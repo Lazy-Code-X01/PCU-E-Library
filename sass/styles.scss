@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import '../sass/defaults';
+@import '../sass/colors';
+@import '../sass/mobile';
+
+:root{
+    --green:rgb(247, 121, 4);
+    --dark-color:rgb(233, 4, 4);
+    --black:#444;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+//top navbar
+.header {
+
+    .header-1{
+        background:#fff;
+        padding: 1.5rem 9%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo{
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: black;
+            
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+        }
+
+        .search-form{
+            width:50rem;
+            height:5rem;
+            border: 1px solid $grey;
+            overflow: hidden;
+            background:#fff;
+            display:flex;
+            align-items: center;
+            border-radius: .5rem;
+            
+            input{
+                font-size: 1.6rem;
+                padding:0 1.2rem;
+                height:100%;
+                width:100%;
+                text-transform: capitalize;
+                border-radius: 30px;
+
+            }
+            label{
+                font-size: 2.5rem;
+                padding-right: 1.5rem;
+                color: #3D3B3B;
+                cursor: pointer;
+                &:hover{
+                   color: $primaryColor;
+                }
+            }
+        }
+
+        .icons div,
+        .icons a{
+            font-size: 2.5rem;
+            margin-left: 1.5rem;
+            color:var(--black);
+            cursor: pointer; 
+            &:hover{
+                color: $primaryColor;
+            }
+        }
+        .icons span{
+            font-size: 2rem;
+        }
+    }
+
+    //second header
+    .header-2{
+        // margin-top: 5px;
+        background-color: $primaryColor;
+        .navbar{
+            text-align: center;
+            
+            a{
+                color:#fff;
+                display: inline-block;
+                padding: 1.5rem;
+                font-size: 1.7rem;
+                &:hover{
+                    background-color: darken($color: $primaryColor, $amount: 10);
+                }
+            }
+        }
+        &.active{
+            position:fixed;
+            top:0; left:0; right:0;
+            z-index: 1000;
+        }
+    }
+}
+
+#search-btn{
+    display: none;
+}
+// bottom navbar
+.bottom-navbar{
+    text-align: center;
+    background: $primaryColor;
+    position: fixed;
+    bottom:0; left:0; right:0;
+    z-index: 1000;
+    display: none;
+
+    a{
+        font-size: 2.5rem;
+        padding:2rem;
+        color:#fff;
+        &:hover{
+            background-color: darken($color: $primaryColor, $amount: 10);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+//home section
+.home{
+    background: url(../images/bg.png) no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    background-position: center;
+
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .content{
+            flex: 1 1 30rem;
+            
+            h3{
+                color:#000;
+                font-size: 3.5rem;
+            }
+            p{
+                color: #373737;
+                font-size: 1.4rem;
+                font-weight: 700;
+                line-height: 2;
+                padding: 1rem 0;
+            }
+        }
+
+        .books-slider{
+            flex:1 1 30rem;
+            text-align: center;
+            margin-top: 2rem;
+
+            a{
+                img{
+                    height: 35.5rem;
+                }
+            }
+            .stand{
+                width:100%;
+                margin-top: -2rem;
+            }
+        }
+    }
+}
+
