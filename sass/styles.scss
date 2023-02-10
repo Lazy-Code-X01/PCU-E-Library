@@ -39,8 +39,8 @@
         }
 
         .search-form{
-            width:50rem;
-            height:5rem;
+            width: 50rem;
+            height: 5rem;
             border: 1px solid $grey;
             overflow: hidden;
             background:#fff;
@@ -55,7 +55,6 @@
                 width:100%;
                 text-transform: capitalize;
                 border-radius: 30px;
-
             }
             label{
                 font-size: 2.5rem;
@@ -112,10 +111,113 @@
 #search-btn{
     display: none;
 
-    @media screen and (max-width: 768px) {
-        display: inline-block;
+    // @media screen and (max-width: 768px) {
+    //     display: inline-block;
+    // }
+}
+
+
+// login form container
+
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgba(255,255,255,.9);
+    position:fixed;
+    top:0; 
+    right:-105%;
+    z-index: 10000;
+    height:100%;
+    width:100%;
+
+    &.active{
+        right: 0;
+    }
+
+    form{
+        background:#fff;
+        border:$grey;
+        width:40rem;
+        padding:2rem;
+        box-shadow: $shadow;
+        border-radius: .5rem;
+        margin:2rem;
+        .box{
+            width: 100%;
+            margin:.7rem 0;
+            font-size: 1.6rem;
+            border:var(--border);
+            border-radius: .5rem;
+            padding:1rem 1.2rem;
+            color:var(--black);
+            text-transform: none;
+        }
+        h3{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: $lightBlack;
+            text-align: center;
+        }
+        span{
+            display: block;
+            font-size: 1.5rem;
+            padding-top: 1rem;
+        }
+        .checkbox{
+            display:flex;
+            align-items: center;
+            gap:.5rem;
+            padding:1rem 0;
+            label{
+                font-size: 1.5rem;
+                color:lighten($color: $lightBlack, $amount: 10);
+                cursor: pointer;
+            }
+        }
+        .btn{
+            background: $primaryColor;
+            color:#fff;
+            font-size: 1.6rem;
+            padding:1rem 1.2rem;
+            width: 100%;
+            text-align: center;
+            border-radius: .5rem;
+            border: none;
+            margin:1.5rem 0;
+            cursor: pointer;
+            &:hover{
+                background: darken($color: $primaryColor, $amount: 10);
+            }
+        }
+        p{
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 1rem;
+            a{
+                color: $primaryColor;
+                text-decoration: underline;
+            }
+        }
+    }
+    #close-login-btn{
+        position: absolute;
+        top:1.5rem; right:2.5rem;
+        font-size: 5rem;
+        color:$lightBlack;
+        cursor: pointer;
     }
 }
+
+.login-form-container #close-login-btn{
+    position: absolute;
+    top:1.5rem; right:2.5rem;
+    font-size: 5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+
 // bottom navbar
 .bottom-navbar{
     text-align: center;
@@ -129,6 +231,7 @@
         font-size: 2.5rem;
         padding:2rem;
         color:#fff;
+
         &:hover{
             background-color: darken($color: $primaryColor, $amount: 10);
         }
