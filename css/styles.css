@@ -361,3 +361,78 @@ section {
   width: 100%;
   margin-top: -2rem;
 }
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.heading span {
+  font-size: 3rem;
+  padding: 0.5rem 2rem;
+  color: var(--black);
+  background: #fff;
+  border: var(--border);
+}
+
+.books {
+  width: 100%;
+  margin: 2rem 0;
+}
+.books .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.books .row .book {
+  flex: 1 1 30rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+.books .row .book .book-img img {
+  height: 25rem;
+}
+.books .row .book .book-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #444;
+  padding: 1rem 0;
+}
+.books .row .book .book-info p {
+  font-size: 1.4rem;
+  color: #444;
+  padding: 1rem 0;
+}
+.books .row .book .book-info .btn {
+  background: #000080;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  margin: 1.5rem 0;
+  cursor: pointer;
+}
+.books .row .book .book-info .btn:hover {
+  background: #00004d;
+}

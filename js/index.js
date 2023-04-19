@@ -1,3 +1,8 @@
+searchForm = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+  searchForm.classList.toggle('active');
+}
 
 let loginForm = document.querySelector('.login-form-container');
 
@@ -10,6 +15,18 @@ document.querySelector('#close-login-btn').onclick = () =>{
 }
 
 
+window.onscroll = () =>{
+
+  searchForm.classList.remove('active');
+
+  if(window.scrollY > 80){
+    document.querySelector('.header .header-2').classList.add('active');
+  }else{
+    document.querySelector('.header .header-2').classList.remove('active');
+  }
+
+}
+
 
 window.onload = () =>{
 
@@ -19,12 +36,16 @@ window.onload = () =>{
     document.querySelector('.header .header-2').classList.remove('active');
   }
 
-  // fadeOut();
+  fadeOut();
   
 }
   
 
+function loader(){
+  document.querySelector('.loader-container').classList.add('active');
+}
+
 function fadeOut(){
-    setTimeout(loader, 4000);
+  setTimeout(loader, 4000);
 }
   
