@@ -40,7 +40,6 @@ window.onload = () =>{
   
 }
   
-
 function loader(){
   document.querySelector('.loader-container').classList.add('active');
 }
@@ -48,4 +47,31 @@ function loader(){
 function fadeOut(){
   setTimeout(loader, 4000);
 }
+
+
+// for the pagination *i used jquery
+$(function() {
+  var books = $(".book");
+  var numPerPage = 3;
+  var numPages = Math.ceil(books.length / numPerPage);
+
+  // create pagination links
+  for (var i = 1; i <= numPages; i++) {
+    $(".pagination_holder").append("<a href='#'>" + i + "</a>");
+  }
+
+  // show first page of books
+  books.slice(0, numPerPage).show();
+
+  // handle pagination link clicks
+  $(".pagination_holder a").click(function(e) {
+    e.preventDefault();
+
+    var pageNum = $(this).text();
+    var start = (pageNum - 1) * numPerPage;
+    var end = start + numPerPage;
+
+    books.hide().slice(start, end).show();
+  });
+});
   

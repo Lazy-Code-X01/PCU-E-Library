@@ -51,3 +51,7 @@ section{
 .btn:hover{
     background:darken($color: $primaryColor, $amount: 10);
 }
+.line{
+    height: 10px;
+    background-color: lightgray;
+}
